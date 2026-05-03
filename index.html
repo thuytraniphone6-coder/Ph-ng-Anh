@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Profile - Hoàng Thị Phương Anh</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed, #1e3c72);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* nền sóng nhẹ */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
+    background-size: 80px 80px;
+    animation: moveBg 25s linear infinite;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-200px,-200px); }
+}
+
+/* container */
+.container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* header */
+.header {
+    text-align: center;
+}
+
+/* avatar đại dương */
+.icon-circle {
+    width: 110px;
+    height: 110px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    box-shadow: 0 0 30px #00c6ff;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* section */
+.section {
+    margin-top: 25px;
+}
+
+.section h2 {
+    border-left: 5px solid #6dd5ed;
+    padding-left: 10px;
+}
+
+/* tag */
+.tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: #00c6ff;
+    transform: scale(1.1);
+}
+
+/* box */
+.box {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* bong bóng */
+.bubble {
+    position: fixed;
+    bottom: -50px;
+    font-size: 20px;
+    animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity: 0.7;}
+    100% { transform: translateY(-100vh); opacity: 0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="icon-circle">🌊</div>
+        <div class="name">Hoàng Thị Phương Anh</div>
+        <p>Lớp: 12C1</p>
+    </div>
+
+    <!-- SỞ THÍCH -->
+    <div class="section">
+        <h2>💙 Sở thích</h2>
+        <div class="tag">🎤 Hát</div>
+        <div class="tag">🎧 Nghe nhạc</div>
+        <div class="tag">😴 Ngủ</div>
+    </div>
+
+    <!-- KỸ NĂNG -->
+    <div class="section">
+        <h2>🌟 Kỹ năng</h2>
+        <div class="tag">💃 Múa</div>
+        <div class="tag">🎨 Vẽ</div>
+    </div>
+
+    <!-- MỤC TIÊU -->
+    <div class="section">
+        <h2>🎯 Mục tiêu</h2>
+        <div class="box">Kiếm nhiều tiền trong tương lai 💸</div>
+    </div>
+
+</div>
+
+<script>
+/* bong bóng bay */
+setInterval(() => {
+    let bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.innerHTML = "🫧";
+    bubble.style.left = Math.random() * 100 + "vw";
+    bubble.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(bubble);
+
+    setTimeout(() => {
+        bubble.remove();
+    }, 8000);
+}, 600);
+</script>
+
+</body>
+</html>
